@@ -1,0 +1,13 @@
+.Body {
+  height: 100%;
+  padding-top: 60px;
+  margin: auto;
+}
+.Body1 {
+  height: 100vh;
+}
+.Body2 {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 100%;
+}
