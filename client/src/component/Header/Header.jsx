@@ -55,8 +55,8 @@ const Header = () => {
         </ul>
       </div>
       <div className="col-1 h1 m-auto d-flex justify-content-center ">
-        <Link className=" ">
-          <i class="fa fa-user-circle" aria-hidden="true"></i>
+        <Link to="/" className="">
+          <button className="btn btn-block btn-dark">Sign in</button>
         </Link>
       </div>
       {/* <div class="col-1 d-flex justify-content-center align-items-center mb-1">

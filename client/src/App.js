@@ -11,6 +11,7 @@ import setAuthToken from "./utils/setAuthToken";
 
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import store from "./store";
+import Footer from "./component/Footer/Footer";
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -53,24 +54,11 @@ export default class App extends Component {
             <Col xs={1}>
               <SideBar />
             </Col>
-            <Col className="pl-5 h-100" xs={11}>
+            <Col className="pl-5" xs={11}>
               <Body />
             </Col>
           </Row>
         </Container>
-
-        {/* <Container fluid>
-          <Row>
-            <Col xs={12}>
-              <Body />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12}>
-              <Footer />
-            </Col>
-          </Row>
-        </Container> */}
       </Router>
     );
   }

@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Container } from "reactstrap";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark  b-0">
+    <footer className="bg-dark">
       <div className="row">
         <div className="col-sm-12 col-md-2"></div>
         <div className="col-sm-12 col-md-3">
