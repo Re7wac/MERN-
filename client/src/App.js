@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Header from "./component/Header/Header";
-import Navbar from "./component/Navbar/Navbar";
+
 import Body from "./component/Body/Body";
 import { Container, Row, Col } from "reactstrap";
-import SideBar from "./component/SideBar/SideBar";
 
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import store from "./store";
-import Footer from "./component/Footer/Footer";
+import NavgationBar from "./component/Navbar/Navbar";
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -39,21 +37,12 @@ export default class App extends Component {
         <Container fluid className="pr-0 pl-0 fixed-top">
           <Row>
             <Col xs={12}>
-              <Header />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12}>
-              <Navbar />
+              <NavgationBar />
             </Col>
           </Row>
         </Container>
-
         <Container fluid className="pr-0 pl-0 pt-5">
           <Row>
-            <Col xs={1}>
-              <SideBar />
-            </Col>
             <Col className="pl-5" xs={11}>
               <Body />
             </Col>

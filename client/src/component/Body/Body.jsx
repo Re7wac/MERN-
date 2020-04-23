@@ -6,17 +6,17 @@ import "./Body.css";
 
 const Body = () => {
   return (
-    <Container fluid className="Body pr-3 pl-2">
+    <Container className=" ">
       <Row>
         <Col xs={12}>
           <Main />
         </Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col xs={12}>
           <Footer />
         </Col>
-      </Row>
+      </Row> */}
     </Container>
   );
 };

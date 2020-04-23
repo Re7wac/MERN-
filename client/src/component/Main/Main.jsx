@@ -18,7 +18,8 @@ const Main = () => {
   return (
     <Fragment>
       <Switch>
-        <Route exact path="/home" component={Home} />;
+        <Route exact path="/" component={Home} />;
+        <Route exact path="/landing" component={Landing} />
         <Route exact path="/service" component={Service} />
         <Route exact path="/support" component={Support} />
         <Route exact path="/contactus" component={ContactUs} />
@@ -26,7 +27,6 @@ const Main = () => {
         <Route exact path="/living" component={Living} />
         <Route exact path="/education" component={Education} />
         <Route exact path="/germanlaw" component={GermanyLaw} />
-        <Route exact path="/" component={Landing} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Switch>
