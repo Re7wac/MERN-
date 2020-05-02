@@ -31,6 +31,7 @@ if (localStorage.jwtToken) {
 }
 
 export default class App extends Component {
+
   render() {
     return (
       <Router>

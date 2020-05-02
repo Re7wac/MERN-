@@ -86,7 +86,7 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 
-const NavgationBar = props => {
+const NavgationBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -103,6 +103,9 @@ const NavgationBar = props => {
             </NavItem>
             <NavItem>
               <NavLink href="/">Home</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/service">COVID-19</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>

@@ -1,11 +1,8 @@
 import React from "react";
+import Covide from "../component/Covide-19/Covide";
 
 const Service = () => {
-  return (
-    <div>
-      <h1>Service</h1>
-    </div>
-  );
+  return <Covide />;
 };
 
 export default Service;

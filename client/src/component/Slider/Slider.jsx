@@ -27,16 +27,16 @@ const Slider = () => {
                 ></li>
               </ol>
               <div className="carousel-inner  size">
-                <div className="carousel-caption d-none d-md-block">
-                  <p>Do you want to be a tandem partner?</p>
-                  <button className="btn btn-success">Register</button>
-                </div>
                 <div className="carousel-item active">
                   <img
                     className="d-block w-100"
                     src="https://newevolutiondesigns.com/images/freebies/nature-hd-background-12.jpg"
                     alt="First"
                   />
+                  <div className="carousel-caption d-none d-md-block">
+                    <p>Do you want to be a tandem partner?</p>
+                    <button className="btn btn-success">Register</button>
+                  </div>
                 </div>
 
                 <div className="carousel-item">
@@ -45,6 +45,12 @@ const Slider = () => {
                     src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80"
                     alt="Second slide"
                   />
+                  <div className="carousel-caption d-none d-md-block">
+                    <p>
+                      Do you wanddddddddddddddddddddfffffffffffffffffffffferner?
+                    </p>
+                    <button className="btn btn-success">Register</button>
+                  </div>
                 </div>
 
                 <div className="carousel-item">
@@ -53,6 +59,10 @@ const Slider = () => {
                     src="https://wallpapertag.com/wallpaper/full/c/6/7/392342-3d-background-1920x1080-for-pc.jpg"
                     alt="Third slide"
                   />
+                  <div className="carousel-caption d-none d-md-block">
+                    <p>Do you wddddddddddddddddddddddddddddddr?</p>
+                    <button className="btn btn-success">Register</button>
+                  </div>
                 </div>
               </div>
             </div>

@@ -13,6 +13,7 @@ import {
   Button,
   FormText,
   Container,
+  Row,
 } from "reactstrap";
 
 class Register extends Component {
@@ -42,11 +43,13 @@ class Register extends Component {
     }
   }
 
-  onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
+  onChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
     e.preventDefault();
 
     const newUser = {
@@ -63,104 +66,96 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <Container className="bg-light-gray">
-        <Form
-          className="mt-5 "
-          noValidate
-          onSubmit={this.onSubmit}
-          action="/examples/actions/confirmation.php"
-          method="post"
-        >
-          <FormText className="text-center m-auto w-25 h2 ">Sign Up</FormText>
-          <hr className="w-25" />
-
-          <Col className="m-auto w-25">
-            <FormText className="grey-text text-darken-1 h4">
-              Already have an account?
-              <Button className="btn btn-block btn-light">
-                <Link to="/login" className="text-dark">
-                  Login
-                </Link>
+      <Container>
+        <Row>
+          <Col className="col-12 col-sm-6 col-lg-4 col-xl-4 m-auto">
+            <Form
+              className="mt-5 "
+              noValidate
+              onSubmit={this.onSubmit}
+              action="/examples/actions/confirmation.php"
+              method="post"
+            >
+              <FormText className="text-center m-auto w-25 h2 ">
+                Sign Up
+              </FormText>
+              <hr />
+              <FormText className="grey-text text-darken-1 h4">
+                Already have an account ?
+                <Button className="btn btn-block btn-light">
+                  <Link to="/login" className="text-dark">
+                    Login
+                  </Link>
+                </Button>
+              </FormText>
+              <hr />
+              <FormGroup className="m-auto">
+                <Label for="name"> Name </Label>
+                <Input
+                  onChange={this.onChange}
+                  value={this.state.name}
+                  error={errors.name}
+                  id="name"
+                  type="text"
+                  placeholder="name"
+                  className={classnames("", {
+                    invalid: errors.name,
+                  })}
+                />
+                <span className="red-text"> {errors.name} </span>
+              </FormGroup>
+              <FormGroup>
+                <Label for="email"> Email : </Label>
+                <Input
+                  onChange={this.onChange}
+                  value={this.state.email}
+                  error={errors.email}
+                  id="email"
+                  type="text"
+                  placeholder="email"
+                  className={classnames("", {
+                    invalid: errors.email,
+                  })}
+                />
+                <span className="red-text"> {errors.email} </span>
+              </FormGroup>
+              <FormGroup>
+                <Label for="examplePassword"> Password </Label>
+                <Input
+                  onChange={this.onChange}
+                  value={this.state.password}
+                  error={errors.password}
+                  id="password"
+                  type="password"
+                  placeholder="Enter you password"
+                  className={classnames("", {
+                    invalid: errors.password || errors.passwordincorrect,
+                  })}
+                />
+                <span className="red-text"> {errors.password} </span>
+              </FormGroup>
+              <FormGroup>
+                <Label for="examplePassword"> Password: </Label>
+                <Input
+                  onChange={this.onChange}
+                  value={this.state.password2}
+                  error={errors.password2}
+                  id="password2"
+                  type="password"
+                  placeholder="Enter your password"
+                  className={classnames("", {
+                    invalid: errors.password2,
+                  })}
+                />
+                <span className="red-text"> {errors.password2} </span>
+              </FormGroup>
+              <hr />
+              <Button className="btn btn-block btn-light" type="submit">
+                Submit
               </Button>
-            </FormText>
+            </Form>
           </Col>
-          <hr className="w-25" />
-          <Col>
-            <FormGroup className="m-auto w-25">
-              <Label for="name"> Name </Label>
-              <Input
-                onChange={this.onChange}
-                value={this.state.name}
-                error={errors.name}
-                id="name"
-                type="text"
-                placeholder="name"
-                className={classnames("", {
-                  invalid: errors.name,
-                })}
-              />
-              <span className="red-text">{errors.name}</span>
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup className="m-auto w-25">
-              <Label for="email"> Email : </Label>
-              <Input
-                onChange={this.onChange}
-                value={this.state.email}
-                error={errors.email}
-                id="email"
-                type="text"
-                placeholder="email"
-                className={classnames("", {
-                  invalid: errors.email,
-                })}
-              />
-              <span className="red-text">{errors.email}</span>
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup className="m-auto w-25">
-              <Label for="examplePassword"> Password </Label>
-              <Input
-                onChange={this.onChange}
-                value={this.state.password}
-                error={errors.password}
-                id="password"
-                type="password"
-                placeholder="Enter you password"
-                className={classnames("", {
-                  invalid: errors.password || errors.passwordincorrect,
-                })}
-              />
-              <span className="red-text">{errors.password}</span>
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup className="m-auto w-25">
-              <Label for="examplePassword"> Password: </Label>
-              <Input
-                onChange={this.onChange}
-                value={this.state.password2}
-                error={errors.password2}
-                id="password2"
-                type="password"
-                placeholder="Enter your password"
-                className={classnames("", {
-                  invalid: errors.password2,
-                })}
-              />
-              <span className="red-text">{errors.password2}</span>
-            </FormGroup>
-          </Col>
-          <hr className="w-25" />
-
-          <Col className="m-auto w-25">
-            <Button className="btn btn-block btn-light" type="submit">
-              Submit
-            </Button>
-          </Col>
-        </Form>
+        </Row>
       </Container>
 
       // <div className="container">
@@ -263,9 +258,11 @@ Register.propTypes = {
   errors: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   auth: state.auth,
   errors: state.errors,
 });
 
-export default connect(mapStateToProps, { registerUser })(withRouter(Register));
+export default connect(mapStateToProps, {
+  registerUser,
+})(withRouter(Register));

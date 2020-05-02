@@ -8,18 +8,17 @@ import LearnGermany from "../../Pages/LearnGermany";
 import Living from "../../Pages/Living";
 import Education from "../../Pages/Education";
 import GermanyLaw from "../../Pages/GermanyLaw";
-import Landing from "../layout/Landing";
 import Register from "../auth/Register";
 import Login from "../auth/Login";
-import Dashboard from "../dashboard/Dashboard";
 import PrivateRoute from "../private-route/PrivateRoute";
+import Dashboard from "../dashboard/Dashboard";
 
 const Main = () => {
   return (
     <Fragment>
       <Switch>
-        <Route exact path="/" component={Home} />;
-        <Route exact path="/landing" component={Landing} />
+        <Route exact path="/" component={Home} />
+        {/* <Route exact path="/landing" component={Landing} /> */}
         <Route exact path="/service" component={Service} />
         <Route exact path="/support" component={Support} />
         <Route exact path="/contactus" component={ContactUs} />
